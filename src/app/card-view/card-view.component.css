@@ -1,0 +1,11 @@
+.example-card {
+  position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin:10px;
+}
+
+.md-button.md-focused {
+  background-color: rgba(219, 34, 34, 0);
+}

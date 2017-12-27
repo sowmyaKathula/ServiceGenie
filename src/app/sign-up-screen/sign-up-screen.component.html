@@ -1,0 +1,25 @@
+<div mat-dialog-content class="example-container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="userDetails.name" placeholder="Full Name" name="fullname">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="userDetails.phone" placeholder="Phone" name="phone">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="userDetails.password" placeholder="Password" name="password">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Confirm Password">
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="userDetails.isProvider" name="provider">Are you a service provider</mat-checkbox>
+    </form>
+</div>
+<div mat-dialog-actions layout-align="end center">
+  <button mat-button tabindex="2" (click)="signup()" >Sign Up</button>
+  <button mat-button (click)="onNoClick()" tabindex="-1" >Close</button>
+</div>

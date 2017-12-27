@@ -1,0 +1,18 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .spacer {
+    flex: 0.05 auto;
+  }
+  button {
+    border-radius: 25px;
+  }
+
+  mat-toolbar {
+    margin-bottom: 20px;
+  }
