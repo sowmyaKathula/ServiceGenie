@@ -1,0 +1,7 @@
+.spacer {
+    flex: 0.05 auto;
+  }
+
+  .mat-dialog-container{
+    background: aqua;
+  }

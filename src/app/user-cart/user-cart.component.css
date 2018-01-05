@@ -1,0 +1,8 @@
+.sidebyside{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.flo-card{
+    margin-left: 50px;
+}

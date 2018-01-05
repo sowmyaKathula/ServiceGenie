@@ -1,8 +1,20 @@
 mat-expansion-panel {
-    width: 40%;
+    width: 100%;
     margin-left: 6%;
 }
 
 p {
     padding: 30px;
+}
+
+.sidebyside{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.flo-card{
+    margin-left: 15%;
+}
+mat-list-item:hover{
+    cursor: pointer;
 }

@@ -26,10 +26,15 @@ import { GridListComponent } from './grid-list/grid-list.component';
 import { CardViewComponent } from './card-view/card-view.component';
 import { SignUpScreenComponent } from './sign-up-screen/sign-up-screen.component';
 import { ServiceCatComponent } from './service-cat/service-cat.component';
+import { MessageComponent } from './message/message.component';
+import { UserComponent } from './user/user.component';
+import { SessionService } from './session.service';
+import { UserCartComponent } from './user-cart/user-cart.component';
+import { AlertComponentComponent } from './alert-component/alert-component.component';
 
 const approute: Routes = [
   { path: '', component: GridListComponent},
-  { path: 'plumbing', component: ServiceCatComponent}
+  { path: ':serviceId/:serviceName', component: ServiceCatComponent}
 ];
 
 
@@ -42,7 +47,11 @@ const approute: Routes = [
     GridListComponent,
     CardViewComponent,
     SignUpScreenComponent,
-    ServiceCatComponent
+    ServiceCatComponent,
+    MessageComponent,
+    UserComponent,
+    UserCartComponent,
+    AlertComponentComponent
   ],
   imports: [
     HttpModule,
@@ -63,8 +72,8 @@ const approute: Routes = [
     MatExpansionModule,
     MatListModule
   ],
-  entryComponents: [LoginScreenComponent, TabScreenComponent],
-  providers: [ ],
+  entryComponents: [AlertComponentComponent, TabScreenComponent],
+  providers: [ UserComponent, SessionService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,16 +2,16 @@
 <div mat-dialog-content class="example-container">
     <form class="example-form">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Phone">
+        <input matInput [(ngModel)]="userDetails.phone" name = "phone" placeholder="Phone">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Password">
+        <input matInput [(ngModel)]="userDetails.password" name="password" placeholder="Password">
       </mat-form-field>
     </form>
 </div>
 <div mat-dialog-actions layout-align="end center">
-  <button mat-button tabindex="2">Ok</button>
+  <button mat-button tabindex="2" (click)="login()">Ok</button>
   <button mat-button (click)="onNoClick()" tabindex="-1" >Close</button>
 </div>
 

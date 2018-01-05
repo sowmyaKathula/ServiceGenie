@@ -8,9 +8,13 @@
       Select Location</a>
 
       <span class="spacer"></span>
-    <button mat-raised-button color="primary" (click)="openTabDialog()">
+
+    <button *ngIf="userProvider.getUser().phone.length <= 0" mat-raised-button color="primary" (click)="openTabDialog()">
         Login/SignUp
     </button>
+    <button *ngIf="userProvider.getUser().phone.length > 0" mat-raised-button color="primary" >
+      {{ userProvider.getUser().name }}
+  </button>
   </mat-toolbar-row>
 </mat-toolbar>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-card-view',
   templateUrl: './card-view.component.html',
@@ -8,12 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardViewComponent implements OnInit {
 
   @Input() data:{};
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
   }
 
   click(){
-    console.log("mat card clicked");
+    console.log(this.data);
   }
 }
