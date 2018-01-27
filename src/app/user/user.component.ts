@@ -12,12 +12,17 @@ export class UserComponent implements OnInit {
 
   private AddtoCartURL = 'http://localhost:8080/addtocart';
   private ClearCartURL = 'http://localhost:8080/clearcart';
+  private RequestServiceURL = "http://localhost:8080/requestservice";
   constructor(private http : Http,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog) { 
+   
+    }
 
   ngOnInit() {
+  
   }
 
+ // private userdata:any;
   private userdata = {
     id : '',
     name : '',
@@ -46,6 +51,20 @@ export class UserComponent implements OnInit {
      
     } 
   }
+
+  public requestService(){
+    let x:any;
+    for (x in this.usercart){
+      console.log(JSON.stringify(this.usercart[x]));
+    }
+    if(this.usercart.length > 0){
+        this.http.post(this.RequestServiceURL,this.usercart).subscribe(response =>{
+          console.log(response);
+        });
+        this.usercart = [];
+    }
+  }
+
   public ClearCartAll() {
     this.usercart = [];
     let data = '{"userID":'+ this.userdata.id+', "itemID":'+ 0+'}';
@@ -84,6 +103,7 @@ export class UserComponent implements OnInit {
     }
 
   public setUser(data) {
+   // localStorage.setItem('usersession',JSON.stringify(data));
     this.userdata = data;
   }
 

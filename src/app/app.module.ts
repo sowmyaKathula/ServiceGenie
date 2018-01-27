@@ -16,6 +16,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -31,10 +32,13 @@ import { UserComponent } from './user/user.component';
 import { SessionService } from './session.service';
 import { UserCartComponent } from './user-cart/user-cart.component';
 import { AlertComponentComponent } from './alert-component/alert-component.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const approute: Routes = [
   { path: '', component: GridListComponent},
+  { path: 'orders/:userId', component: OrdersComponent },
   { path: ':serviceId/:serviceName', component: ServiceCatComponent}
+  
 ];
 
 
@@ -51,7 +55,8 @@ const approute: Routes = [
     MessageComponent,
     UserComponent,
     UserCartComponent,
-    AlertComponentComponent
+    AlertComponentComponent,
+    OrdersComponent
   ],
   imports: [
     HttpModule,
@@ -70,7 +75,8 @@ const approute: Routes = [
     FormsModule,
     RouterModule.forRoot(approute),
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   entryComponents: [AlertComponentComponent, TabScreenComponent],
   providers: [ UserComponent, SessionService ],

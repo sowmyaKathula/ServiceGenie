@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Http, Headers } from '@angular/http';
 import { UserComponent } from '../user/user.component';
 import { AlertComponentComponent } from '../alert-component/alert-component.component';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-screen',
@@ -47,10 +48,14 @@ export class LoginScreenComponent implements OnInit {
         console.log(message);
       if(message.status == 1){
        // console.log(this.userDetails);
+       localStorage.setItem('user',JSON.stringify(message));
+       localStorage.setItem('usercart',JSON.stringify(message.usercart));
+       //sessionStorage.setItem('user',JSON.stringify(message));
         this.user.setUser(message);
         this.dialogRef.close();
         this.user.setCart(message.usercart);
         this.alert(message.message);
+      //  console.log(localStorage.getItem('usersession')+" login module");
         
       }
       },

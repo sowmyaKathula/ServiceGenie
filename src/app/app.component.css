@@ -14,5 +14,18 @@
   }
 
   mat-toolbar {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
+
+  logo-img {
+    max-width: 10px;
+    max-height: 10px;
+  }
+
+  .sidebyside{
+    margin-left:8%;
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+

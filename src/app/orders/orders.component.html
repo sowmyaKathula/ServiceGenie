@@ -1,0 +1,13 @@
+<div class="table">
+  <mat-accordion>  
+    <mat-expansion-panel hideToggle = "True" *ngFor="let order of orders">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ order.requested_cat_service_name }}
+        </mat-panel-title>
+        <button mat-raised-button color="primary" disabled *ngIf = "order.accepted == 0">Request Pending</button>
+        <button mat-raised-button color="primary" *ngIf = "order.accepted != 0">Accepted</button>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

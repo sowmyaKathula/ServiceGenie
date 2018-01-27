@@ -38,6 +38,9 @@ export class ServiceCatComponent implements OnInit {
 
   addtoCart(cat) {
     console.log(cat);
-    this.userprovider.addtocart(cat);
+    let tempcart =cat;
+    tempcart.service_id =this.service.id;
+   //console.log(tempcart);
+    this.userprovider.addtocart(tempcart);
   }
 }

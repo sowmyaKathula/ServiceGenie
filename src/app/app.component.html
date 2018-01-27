@@ -1,27 +1,71 @@
-<mat-toolbar color="primary" >
+<mat-toolbar color="primary">
   <mat-toolbar-row>
+      <div class="logo-img">
+        <img style="max-height: 40px;max-width: 40px;margin-right:10px" src="/assets/Icon.png" >
+      </div>
     <span>Service Genie</span>
     <span class="example-spacer"></span>
    
-    <a mat-button>
-        <mat-icon>location_on</mat-icon>
-      Select Location</a>
+    <mat-icon (click)="orders()">shopping_basket</mat-icon>
 
-      <span class="spacer"></span>
-
+    <span class="spacer"></span>
     <button *ngIf="userProvider.getUser().phone.length <= 0" mat-raised-button color="primary" (click)="openTabDialog()">
         Login/SignUp
     </button>
-    <button *ngIf="userProvider.getUser().phone.length > 0" mat-raised-button color="primary" >
-      {{ userProvider.getUser().name }}
-  </button>
+    <button *ngIf="userProvider.getUser().phone.length > 0" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <!-- <button *ngIf="sessionuser === null" mat-raised-button color="primary" (click)="openTabDialog()">
+        Login/SignUp
+    </button>
+    <button *ngIf="sessionuser !== null" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button> -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="displayOrders()">
+        <span>Orders</span>
+      </button>
+      <button mat-menu-item>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+
   </mat-toolbar-row>
 </mat-toolbar>
-
+<!--
 <div class="row" style="background-color:white;height:40px">
   <app-search></app-search>
 </div>
-
+-->
 <div class="row" style="background-color:#d3d3d3; min-height: 500px">
   <router-outlet></router-outlet>
 </div>
+
+
+<footer style="background-color:#0000BD;height:140px">
+  <div class= "row" layout="row" layout-align="center center" >
+      <div class="row" style="padding-top:2px">
+          <h4 style="color:whitesmoke;text-align:center">Happy To Serve You</h4>
+      </div>
+      <div class="sidebyside">
+          <div class="logo-img">
+            <div class="row">
+                <img style="max-height: 30px;max-width: 30px;margin-right:5px" src="/assets/Icon.png" >
+                <span style="color:whitesmoke">Service Genie</span>
+            </div>
+            <div class="row">
+                <p style="color:whitesmoke; font-size:13px">@ ServiceGenie 2018. All Rights Reserved.</p>
+            </div>
+            
+          </div>
+      </div>
+      <div class="sidebyside flo-card">
+          <div class="row">
+            COMPANY
+          </div>
+      </div>
+  </div>
+</footer>
